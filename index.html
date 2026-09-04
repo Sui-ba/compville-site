@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compville — Сборка ПК на заказ | Любой бюджет</title>
+  <meta name="description" content="Профессиональная сборка и настройка компьютеров под любой бюджет. Готовые сборки и индивидуальный подбор комплектующих. Томск и вся Россия.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">C</span>
+        Compville
+      </a>
+      <div class="nav-links">
+        <a href="#builds">Готовые сборки</a>
+        <a href="#custom">Сборка на заказ</a>
+        <a href="#process">Как это работает</a>
+        <a href="#support">Поддержка</a>
+      </div>
+      <a href="#custom" class="nav-cta">Заказать сборку</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#builds">Готовые сборки</a>
+      <a href="#custom">Сборка на заказ</a>
+      <a href="#process">Как это работает</a>
+      <a href="#support">Поддержка</a>
+      <a href="#custom" class="nav-cta">Заказать сборку</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        5.0 · 701 отзыв · Работаем с 2012 года
+      </div>
+      <h1>Сборка ПК<br>под любой бюджет</h1>
+      <p class="hero-subtitle">
+        Индивидуальный подбор комплектующих, профессиональная сборка и настройка.
+        От офисных машин до мощных игровых систем.
+      </p>
+      <div class="hero-buttons">
+        <a href="#custom" class="btn btn-primary">Заполнить анкету</a>
+        <a href="#builds" class="btn btn-secondary">Смотреть готовые сборки</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">13+</div>
+          <div class="stat-label">лет опыта</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">701</div>
+          <div class="stat-label">отзывов 5.0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">480+</div>
+          <div class="stat-label">продаж с доставкой</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">~30 мин</div>
+          <div class="stat-label">время ответа</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="builds">
+    <div class="section-header">
+      <h2>Готовые сборки</h2>
+      <p>Проверенные конфигурации под разные задачи. Можно взять как есть или адаптировать под ваш бюджет.</p>
+    </div>
+
+    <div class="builds-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="office">Офис / Учёба</button>
+      <button class="filter-btn" data-filter="gaming">Игры</button>
+      <button class="filter-btn" data-filter="workstation">Работа / Монтаж</button>
+      <button class="filter-btn" data-filter="budget">Бюджетные</button>
+    </div>
+
+    <div class="builds-grid" id="buildsGrid"></div>
+  </section>
+
+  <section class="section section-dark" id="custom">
+    <div class="section-header">
+      <h2>Сборка ПК на заказ</h2>
+      <p>Заполните анкету — мы подберём оптимальную конфигурацию под ваш бюджет и задачи.</p>
+    </div>
+
+    <div class="form-container">
+      <form id="buildForm" class="build-form">
+        <div class="form-progress">
+          <div class="progress-step active" data-step="1">1. Контакты</div>
+          <div class="progress-step" data-step="2">2. Задачи</div>
+          <div class="progress-step" data-step="3">3. Бюджет</div>
+          <div class="progress-step" data-step="4">4. Готово</div>
+        </div>
+
+        <div class="form-step active" data-step="1">
+          <h3>Контактные данные</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Имя *</label>
+              <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="form-group">
+              <label for="city">Город *</label>
+              <input type="text" id="city" name="city" placeholder="Томск, Москва, Новосибирск..." required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Телефон *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label for="telegram">Telegram (необязательно)</label>
+              <input type="text" id="telegram" name="telegram" placeholder="@username">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary next-step">Далее →</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h3>Для чего нужен компьютер?</h3>
+          <p class="form-hint">Можно выбрать несколько вариантов</p>
+          
+          <div class="purpose-grid">
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="office">
+              <div class="purpose-content">
+                <span class="purpose-icon">💼</span>
+                <span class="purpose-title">Офис / Учёба</span>
+                <span class="purpose-desc">Документы, браузер, Zoom</span>
+              </div>
+            </label>
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="gaming">
+              <div class="purpose-content">
+                <span class="purpose-icon">🎮</span>
+                <span class="purpose-title">Игры</span>
+                <span class="purpose-desc">AAA-тайтлы, киберспорт</span>
+              </div>
+            </label>
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="streaming">
+              <div class="purpose-content">
+                <span class="purpose-icon">📡</span>
+                <span class="purpose-title">Стриминг</span>
+                <span class="purpose-desc">OBS, Twitch, YouTube</span>
+              </div>
+            </label>
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="video">
+              <div class="purpose-content">
+                <span class="purpose-icon">🎬</span>
+                <span class="purpose-title">Монтаж видео</span>
+                <span class="purpose-desc">Premiere, DaVinci, After Effects</span>
+              </div>
+            </label>
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="design">
+              <div class="purpose-content">
+                <span class="purpose-icon">🎨</span>
+                <span class="purpose-title">Дизайн / 3D</span>
+                <span class="purpose-desc">Photoshop, Blender, CAD</span>
+              </div>
+            </label>
+            <label class="purpose-card">
+              <input type="checkbox" name="purpose" value="server">
+              <div class="purpose-content">
+                <span class="purpose-icon">🖥️</span>
+                <span class="purpose-title">Сервер / NAS</span>
+                <span class="purpose-desc">Домашний сервер, хранилище</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="form-group" style="margin-top: 24px;">
+            <label for="games">Любимые игры или программы (необязательно)</label>
+            <input type="text" id="games" name="games" placeholder="Cyberpunk, CS2, Premiere Pro...">
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary prev-step">← Назад</button>
+            <button type="button" class="btn btn-primary next-step">Далее →</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h3>Бюджет и пожелания</h3>
+          
+          <div class="form-group">
+            <label for="budget">Бюджет (₽) *</label>
+            <div class="budget-options">
+              <label class="budget-option">
+                <input type="radio" name="budget" value="30000" required>
+                <span>до 30 000 ₽</span>
+              </label>
+              <label class="budget-option">
+                <input type="radio" name="budget" value="50000">
+                <span>30–50 000 ₽</span>
+              </label>
+              <label class="budget-option">
+                <input type="radio" name="budget" value="80000">
+                <span>50–80 000 ₽</span>
+              </label>
+              <label class="budget-option">
+                <input type="radio" name="budget" value="120000">
+                <span>80–120 000 ₽</span>
+              </label>
+              <label class="budget-option">
+                <input type="radio" name="budget" value="200000">
+                <span>120–200 000 ₽</span>
+              </label>
+              <label class="budget-option">
+                <input type="radio" name="budget" value="300000">
+                <span>от 200 000 ₽</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="monitor">Нужен монитор?</label>
+              <select id="monitor" name="monitor">
+                <option value="no">Нет, только системный блок</option>
+                <option value="yes">Да, подберите монитор</option>
+                <option value="have">У меня уже есть</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="peripherals">Периферия</label>
+              <select id="peripherals" name="peripherals">
+                <option value="no">Не нужна</option>
+                <option value="keyboard-mouse">Клавиатура + мышь</option>
+                <option value="full">Полный комплект</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="preferences">Дополнительные пожелания</label>
+            <textarea id="preferences" name="preferences" rows="4" placeholder="Цвет корпуса, тихая система, RGB, конкретные бренды, сроки..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary prev-step">← Назад</button>
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <div class="success-message">
+            <div class="success-icon">✓</div>
+            <h3>Заявка принята!</h3>
+            <p>Мы свяжемся с вами в ближайшее время (обычно в течение 30 минут в рабочее время).</p>
+            <p class="success-id">Номер заявки: <strong id="orderId"></strong></p>
+            <div class="success-actions">
+              <a href="https://www.avito.ru/brands/114537da7795c903dd075809c39f399d" target="_blank" class="btn btn-primary">Перейти в профиль на Авито</a>
+              <button type="button" class="btn btn-secondary" id="newOrderBtn">Новая заявка</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="orders-panel" id="ordersPanel">
+        <div class="orders-header">
+          <h3>Заявки</h3>
+          <button class="btn btn-small" id="clearOrdersBtn">Очистить</button>
+        </div>
+        <div class="orders-list" id="ordersList">
+          <p class="orders-empty">Пока нет заявок. Заполните форму выше.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="section-header">
+      <h2>Как мы работаем</h2>
+      <p>Прозрачный процесс от заявки до готового компьютера</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-number">01</div>
+        <h3>Анкета</h3>
+        <p>Вы заполняете форму: бюджет, задачи, город и пожелания.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">02</div>
+        <h3>Подбор</h3>
+        <p>Мы составляем конфигурацию и согласовываем её с вами.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">03</div>
+        <h3>Сборка</h3>
+        <p>Собираем, устанавливаем систему, тестируем стабильность.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-number">04</div>
+        <h3>Доставка</h3>
+        <p>Отправляем по России или самовывоз в Томске. Гарантия.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="support">
+    <div class="section-header">
+      <h2>Поддержка и гарантия</h2>
+      <p>Мы остаёмся на связи после покупки</p>
+    </div>
+
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="support-icon">🛠️</div>
+        <h3>Настройка и ПО</h3>
+        <p>Устанавливаем Windows, драйверы, базовый софт. Оптимизируем систему под ваши задачи.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">📦</div>
+        <h3>Гарантия</h3>
+        <p>Гарантия на комплектующие и сборку. Помогаем с гарантийными случаями.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">💬</div>
+        <h3>Консультации</h3>
+        <p>Отвечаем на вопросы по апгрейду, совместимости и эксплуатации.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">🚚</div>
+        <h3>Доставка</h3>
+        <p>Работаем с Авито Доставкой и другими службами. Безопасная упаковка.</p>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-info">
+        <h3>Связаться напрямую</h3>
+        <p>Томск · Отвечаем ~30 минут</p>
+        <a href="https://www.avito.ru/brands/114537da7795c903dd075809c39f399d" target="_blank" class="btn btn-primary">
+          Написать на Авито
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">C</span>
+          Compville
+        </div>
+        <p>Комповальня · Сборка ПК с 2012 года</p>
+      </div>
+      <div class="footer-links">
+        <a href="#builds">Готовые сборки</a>
+        <a href="#custom">Сборка на заказ</a>
+        <a href="#support">Поддержка</a>
+        <a href="https://www.avito.ru/brands/114537da7795c903dd075809c39f399d" target="_blank">Авито</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2012–2026 Compville. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
